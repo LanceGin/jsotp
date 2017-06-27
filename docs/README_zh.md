@@ -2,7 +2,7 @@
 
 `jsotp`是一个用来生成用来生成及验证一次性密码的js模块，一次性密码通常用来在web应用或者其他登录系统中作为二步验证或多步验证使用。
 
-该模块基于 [RFC4226](https://tools.ietf.org/html/rfc4226) （HOTP：基于HMAC的一次性密码算法）和 [RFC6238](https://tools.ietf.org/html/rfc6238)（TOTP：基于时间的一次性密码算法）实现
+该模块基于 [RFC4226](https://tools.ietf.org/html/rfc4226) （HOTP：基于计数器的一次性密码算法）和 [RFC6238](https://tools.ietf.org/html/rfc6238)（TOTP：基于时间的一次性密码算法）实现
 
 ### 功能
 
@@ -40,44 +40,44 @@
 #### 基于时间的OTP
 
 ```javascript
-# import
+// import
 let jsotp = require('jsotp');
 
-# Create TOTP object
+// Create TOTP object
 let totp = jsotp.TOTP.gen('BASE32_ENCODED_SECRET');
-totp.now(); # => 432143
+totp.now(); // => 432143
 
-# Verify for current time
-totp.verify(432143); # => true
+// Verify for current time
+totp.verify(432143); // => true
 
-# Verify after 30s
-totp.verify(432143); # => false
+// Verify after 30s
+totp.verify(432143); // => false
 ```
 
 #### 基于计数器的OTP
 
 ```javascript
-# import
+// import
 let jsotp = require('jsotp');
 
-# Create HOTP object
+// Create HOTP object
 let hotp = jsotp.HOTP.gen('BASE32_ENCODED_SECRET');
-hotp.at(0); # => 432143
-hotp.at(1); # => 231434
-hotp.at(2132); # => 242432
+hotp.at(0); // => 432143
+hotp.at(1); // => 231434
+hotp.at(2132); // => 242432
 
-# Verify with a counter
-hotp.verify(242432, 2132); # => true
-hotp.verify(242432, 2133); # => false
+// Verify with a counter
+hotp.verify(242432, 2132); // => true
+hotp.verify(242432, 2133); // => false
 ```
 
 #### 生成随机base32加密字符串
 
 ```javascript
-# import
+// import
 let jsotp = require('jsotp');
 
-# Generate
+// Generate
 let b32_secret = jsotp.Base32.random_gen();
 ```
 

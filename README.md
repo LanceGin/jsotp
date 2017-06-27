@@ -40,44 +40,44 @@ Only `TOTP` module support:
 #### Time-based OTPs
 
 ```javascript
-# import
+// import
 let jsotp = require('jsotp');
 
-# Create TOTP object
+// Create TOTP object
 let totp = jsotp.TOTP.gen('BASE32_ENCODED_SECRET');
-totp.now(); # => 432143
+totp.now(); // => 432143
 
-# Verify for current time
-totp.verify(432143); # => true
+// Verify for current time
+totp.verify(432143); // => true
 
-# Verify after 30s
-totp.verify(432143); # => false
+// Verify after 30s
+totp.verify(432143); // => false
 ```
 
 #### Counter-based OTPs
 
 ```javascript
-# import
+// import
 let jsotp = require('jsotp');
 
-# Create HOTP object
+// Create HOTP object
 let hotp = jsotp.HOTP.gen('BASE32_ENCODED_SECRET');
-hotp.at(0); # => 432143
-hotp.at(1); # => 231434
-hotp.at(2132); # => 242432
+hotp.at(0); // => 432143
+hotp.at(1); // => 231434
+hotp.at(2132); // => 242432
 
-# Verify with a counter
-hotp.verify(242432, 2132); # => true
-hotp.verify(242432, 2133); # => false
+// Verify with a counter
+hotp.verify(242432, 2132); // => true
+hotp.verify(242432, 2133); // => false
 ```
 
 #### Generate random base32 encoded secret
 
 ```javascript
-# import
+// import
 let jsotp = require('jsotp');
 
-# Generate
+// Generate
 let b32_secret = jsotp.Base32.random_gen();
 ```
 
