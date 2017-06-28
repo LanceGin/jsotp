@@ -15,25 +15,35 @@
 
 ### 安装
 
-	npm install jsotp
+```shell
+npm install jsotp
+```
 	
 ### 模块
 
 全部模块支持:
 
-	let jsotp = require('jsotp');
+```javascript
+let jsotp = require('jsotp');
+```
 	
 仅 `Base32` 模块支持:
 
-	let jsotp = require('jsotp/base32');
+```javascript
+let jsotp = require('jsotp/base32');
+```
 	
 仅 `HOTP` 模块支持:
 
-	let jsotp = require('jsotp/hotp');
+```javascript
+let jsotp = require('jsotp/hotp');
+```
 	
 仅 `TOTP` 模块支持: 
 
-	let jsotp = require('jsotp/totp');
+```javascript
+let jsotp = require('jsotp/totp');
+```
 	
 ### 使用
 
@@ -98,5 +108,20 @@ let b32_secret = jsotp.Base32.random_gen();
 #### • jsotp.HOTP.at()
 
 #### • jsotp.HOTP.verify()
+
+### 开发
+
+* 克隆代码并安装依赖
+
+```shell
+git clone git@github.com:LanceGin/jsotp.git
+npm install
+```
+
+* 在`src/`文件夹中进行源码编写，执行下面命令将es6代码编译成es2015，命令会生成一个`lib/`本地文件夹。
+
+```shell
+npm run build
+```
 
 ### [README](../README.md)

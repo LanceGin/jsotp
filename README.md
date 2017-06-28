@@ -15,25 +15,35 @@ The module was implement based on [RFC4226](https://tools.ietf.org/html/rfc4226)
 
 ### Installation
 
-	npm install jsotp
+```shell
+npm install jsotp
+```
 	
 ### Module
 
-All features support:
+All modules support:
 
-	let jsotp = require('jsotp');
+```javascript
+let jsotp = require('jsotp');
+```
 	
 Only `Base32` module support:
 
-	let jsotp = require('jsotp/base32');
+```javascript
+let jsotp = require('jsotp/base32');
+```
 	
 Only `HOTP` module support:
 
-	let jsotp = require('jsotp/hotp');
+```javascript
+let jsotp = require('jsotp/hotp');
+```
 	
 Only `TOTP` module support: 
 
-	let jsotp = require('jsotp/totp');
+```javascript
+let jsotp = require('jsotp/totp');
+```
 	
 ### Usage
 
@@ -98,6 +108,21 @@ let b32_secret = jsotp.Base32.random_gen();
 #### • jsotp.HOTP.at()
 
 #### • jsotp.HOTP.verify()
+
+### Develop
+
+* Clone depo and install dependencies
+
+```shell
+git clone git@github.com:LanceGin/jsotp.git
+npm install
+```
+
+* Contribute the code in `src/`, and run command below to build the es6 code to es2015. That will create a local directory named `lib/`.
+
+```shell
+npm run build
+```
 
 ### [中文文档](docs/README_zh.md)
 
