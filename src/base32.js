@@ -5,5 +5,11 @@
  */
 
  class Base32 {
+    static decode() {
+        console.log("static Base32.decode");
+    }
 
+    static random_gen() {
+        console.log("static Base32.random_gen");
+    }
  }
