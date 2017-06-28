@@ -1,0 +1,36 @@
+{
+  "name": "jsotp",
+  "version": "1.0.0",
+  "description": "Javascript One-Time Password module.",
+  "main": "src/jsotp.js",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel src -d lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LanceGin/jsotp.git"
+  },
+  "keywords": [
+    "otp",
+    "totp",
+    "hotp",
+    "rfc6238",
+    "rfc4226"
+  ],
+  "author": "lancegin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LanceGin/jsotp/issues"
+  },
+  "homepage": "https://github.com/LanceGin/jsotp#readme",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1"
+  }
+}
