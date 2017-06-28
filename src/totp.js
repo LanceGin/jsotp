@@ -15,8 +15,8 @@ import OTP from './otp';
      * @return {OTP}
      */
     constructor(interval=30, ...args) {
-        this.interval = interval;
         super(...args);
+        this.interval = interval;
     }
 
     /*＊
