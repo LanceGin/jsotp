@@ -5,7 +5,7 @@
 
 import OTP from './otp';
 
-export default class TOTP extends OTP {
+export class TOTP extends OTP {
     /*＊
      * @param {secret}
      * @type {String} 
@@ -35,7 +35,7 @@ export default class TOTP extends OTP {
      * ```
      */
     now() {
-        console.log("TOTP.now");
+        return "TOTP.now";
     }
 
     /*＊
@@ -62,6 +62,6 @@ export default class TOTP extends OTP {
      * ```
      */
     verify(otp, time=null) {
-        console.log("TOTP.verify");
+        return "TOTP.verify";
     }
  }

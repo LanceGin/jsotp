@@ -5,7 +5,7 @@
 
 import OTP from './otp';
 
-export default class HOTP extends OTP {
+export class HOTP extends OTP {
     /*＊
      * Generate the OTP with the given count
      *
@@ -22,7 +22,7 @@ export default class HOTP extends OTP {
      * ```
      */
     at(count) {
-        console.log("HOTP.at");
+        return "HOTP.at";
     }
 
     /*＊
@@ -47,6 +47,6 @@ export default class HOTP extends OTP {
      * ```
      */
     verify(otp, counter) {
-        console.log("HOTP.verify");
+        return "HOTP.verify";
     }
 }

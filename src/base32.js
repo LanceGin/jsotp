@@ -4,12 +4,12 @@
  *  @author   : Gin (gin.lance.inside@hotmail.com)
  */
 
- export default class Base32 {
+ export class Base32 {
     static decode() {
-        console.log("static Base32.decode");
+        return "static Base32.decode";
     }
 
     static random_gen() {
-        console.log("static Base32.random_gen");
+        return "static Base32.random_gen";
     }
  }

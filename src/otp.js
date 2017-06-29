@@ -3,7 +3,7 @@
  *  @author   : Gin (gin.lance.inside@hotmail.com)
  */
 
-export default class OTP  {
+export class OTP  {
     /*＊
      * This constructor will create OTP instance.
      *
@@ -41,7 +41,7 @@ export default class OTP  {
      * @return {OTP}
      */
     generate_otp(input) {
-        console.log("OTP.generate_otp");
+        return "OTP.generate_otp";
     }
  }
 
