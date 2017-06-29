@@ -3,12 +3,13 @@ var assert = require('assert');
 
 describe('OTP module test', function() {
 
-    var OTP = otp.OTP;
-    var a = new OTP("BASE32_ENCODED_SECRET");
+    var a = new otp.OTP("J22U6B3WIWRRBTAV");
+
+    console.log(a.generate_otp(49957590));
     
     describe('generate_otp() function', function() {
-        it("should print 'OTP.generate_otp'", function() {
-            assert.equal("OTP.generate_otp", a.generate_otp())
+        it("should print '139878'", function() {
+            assert.equal("139878", a.generate_otp(49957590))
         });
     });
 });

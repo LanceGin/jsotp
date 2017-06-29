@@ -2,6 +2,9 @@
  *  @module   : OTP module to generate the password
  *  @author   : Gin (gin.lance.inside@hotmail.com)
  */
+const jsSHA = require("jssha");
+import { Base32 } from './base32';
+import { Util } from './util';
 
 export class OTP  {
     /*＊
@@ -22,7 +25,7 @@ export class OTP  {
      * only to be "sha1"
      *
      */
-    constructor(secret, digits=6, digest="sha1") {
+    constructor(secret, digits=6, digest="SHA-1") {
         this.secret = secret;
         this.digits = digits;
         this.digest = digest;
@@ -41,7 +44,38 @@ export class OTP  {
      * @return {OTP}
      */
     generate_otp(input) {
-        return "OTP.generate_otp";
+        // generate HMAC object with SHA-1 digest
+        let hmacObj = new jsSHA(this.digest, "BYTES");
+            // set hmac token
+            hmacObj.setHMACKey(Util.byte_secret(this.secret), "BYTES");
+            // hamc encode the input param
+            hmacObj.update(Util.int_to_bytestring(input));
+
+        // get HMAC ans
+        let hmac = hmacObj.getHMAC("BYTES");
+
+        // transfer hmac to Array
+        let hmac_a = hmac.split("");
+
+        // calculate the init offset
+        let offset = hmac_a[hmac_a.length - 1].charCodeAt() & 0xf;
+
+        // calculate the code
+        let code = (
+            (hmac_a[offset].charCodeAt()     & 0x7f) << 24 |
+            (hmac_a[offset + 1].charCodeAt() & 0xff) << 16 |
+            (hmac_a[offset + 2].charCodeAt() & 0xff) << 8  |
+            (hmac_a[offset + 3].charCodeAt() & 0xff)
+        );
+
+        // get the init str code
+        let str_code = (code % 10 ** this.digits).toString();
+
+        // rjust format
+        str_code = Util.rjust(str_code, this.digits);
+
+        return str_code;
     }
+
  }
 
