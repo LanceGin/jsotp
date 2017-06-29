@@ -17,7 +17,7 @@ export class HOTP extends OTP {
      *
      * @example
      * ```javascript
-     * let hotp = jsotp.HOTP.gen('BASE32_ENCODED_SECRET');
+     * let hotp = jsotp.HOTP('BASE32_ENCODED_SECRET');
      * hotp.at(0); // => 432143
      * ```
      */
@@ -40,7 +40,7 @@ export class HOTP extends OTP {
      *
      * @example
      * ```javascript
-     * let hotp = jsotp.HOTP.gen('BASE32_ENCODED_SECRET');
+     * let hotp = jsotp.HOTP('BASE32_ENCODED_SECRET');
      * hotp.at(0); // => 432143
      * hotp.verify(432143, 0); // => true
      * hotp.verify(432143, 1); // => false

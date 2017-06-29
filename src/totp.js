@@ -30,7 +30,7 @@ export class TOTP extends OTP {
      *
      * @example
      * ```javascript
-     * let totp = jsotp.TOTP.gen('BASE32_ENCODED_SECRET');
+     * let totp = jsotp.TOTP('BASE32_ENCODED_SECRET');
      * totp.now(); // => 432143
      * ```
      */
@@ -53,7 +53,7 @@ export class TOTP extends OTP {
      *
      * @example
      * ```javascript
-     * let totp = jsotp.TOTP.gen('BASE32_ENCODED_SECRET');
+     * let totp = jsotp.TOTP('BASE32_ENCODED_SECRET');
      * totp.now(); // => 432143
      * // Verify for current time
      * totp.verify(432143); // => true
