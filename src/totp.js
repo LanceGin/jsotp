@@ -7,6 +7,10 @@ import OTP from './otp';
 
  class TOTP extends OTP {
     /*＊
+     * @param {secret}
+     * @type {String} 
+     * @desc random base32-encoded key to generate OTP.
+     *
      * @param {interval}
      * @type {int} 
      * @desc the time interval in seconds for OTP.
