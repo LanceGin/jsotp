@@ -5,7 +5,7 @@
 
 import OTP from './otp';
 
-class HOTP extends OTP {
+export default class HOTP extends OTP {
     /*＊
      * Generate the OTP with the given count
      *

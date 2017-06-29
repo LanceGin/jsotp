@@ -5,8 +5,16 @@
  *  @Disc     : a node module to generate and verify one-time passwords
  */
 
-function jsotp(name) {
-    console.log(`Hello ${name}`);
-}
+import OTP from './otp';
+import TOTP from './totp';
+import HOTP from './hotp';
+import Base32 from './base32';
+import Util from './util';
 
-exports.jsotp = jsotp
+export {
+    OTP,
+    TOTP,
+    HOTP,
+    Base32,
+    Util
+};

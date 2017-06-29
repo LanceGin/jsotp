@@ -4,7 +4,7 @@
  *  @author   : Gin (gin.lance.inside@hotmail.com)
  */
 
- class Base32 {
+ export default class Base32 {
     static decode() {
         console.log("static Base32.decode");
     }

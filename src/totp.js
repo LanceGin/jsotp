@@ -5,7 +5,7 @@
 
 import OTP from './otp';
 
- class TOTP extends OTP {
+export default class TOTP extends OTP {
     /*＊
      * @param {secret}
      * @type {String} 

@@ -3,6 +3,6 @@
  *  @author   : Gin (gin.lance.inside@hotmail.com)
  */
 
- class Util {
+ export default class Util {
     
  }
