@@ -6,8 +6,8 @@ describe('Base32 module test', function() {
     var a = b32.Base32;
     
     describe('static decode() function', function() {
-        it("should print 'static Base32.decode'", function() {
-            assert.equal("static Base32.decode", a.decode());
+        it("should print 'Hello, World!'", function() {
+            assert.equal("Hello, World!", a.decode("JBSWY3DPFQQFO33SNRSCC====="));
         });
     });
 
