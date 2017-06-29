@@ -2,13 +2,13 @@
   "name": "jsotp",
   "version": "1.0.0",
   "description": "Javascript One-Time Password module.",
-  "main": "src/jsotp.js",
+  "main": "main/jsotp.js",
   "directories": {
     "doc": "docs",
     "test": "tests"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha --compilers js:babel-core/register",
     "build": "babel src -d lib"
   },
   "repository": {
@@ -30,7 +30,9 @@
   "homepage": "https://github.com/LanceGin/jsotp#readme",
   "devDependencies": {
     "babel-cli": "^6.24.1",
+    "babel-core": "^6.25.0",
     "babel-preset-es2015": "^6.24.1",
-    "babel-preset-stage-0": "^6.24.1"
+    "babel-preset-stage-0": "^6.24.1",
+    "mocha": "^3.4.2"
   }
 }
