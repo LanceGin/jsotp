@@ -3,7 +3,7 @@
  *  @author   : Gin (gin.lance.inside@hotmail.com)
  */
 
-import OTP from './otp';
+import { OTP } from './otp';
 
 export class TOTP extends OTP {
     /*＊

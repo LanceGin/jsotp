@@ -5,11 +5,11 @@
  *  @Disc     : a node module to generate and verify one-time passwords
  */
 
-import OTP from './otp';
-import TOTP from './totp';
-import HOTP from './hotp';
-import Base32 from './base32';
-import Util from './util';
+import { OTP } from './otp';
+import { TOTP } from './totp';
+import { HOTP } from './hotp';
+import { Base32 } from './base32';
+import { Util } from './util';
 
 export {
     OTP,
