@@ -22,7 +22,8 @@ export class HOTP extends OTP {
      * ```
      */
     at(count) {
-        return "HOTP.at";
+        let digit = super.generate_otp(count);
+        return digit;
     }
 
     /*＊
@@ -47,6 +48,12 @@ export class HOTP extends OTP {
      * ```
      */
     verify(otp, counter) {
-        return "HOTP.verify";
+        let otp_count = this.at(counter);
+
+        if (otp === otp_count) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

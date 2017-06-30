@@ -13,7 +13,7 @@ describe('TOTP module test', function() {
     });
 
     describe('verify() function', function() {
-        it("should print 'TOTP.verify'", function() {
+        it("should verify the digit", function() {
             assert.equal(true, a.verify(a.now()));
         })
     })
