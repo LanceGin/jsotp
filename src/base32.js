@@ -20,7 +20,19 @@ export class Base32 {
         return nibbler.b32decode(secret);
     }
 
-    static random_gen() {
-        return "static Base32.random_gen";
+    /*＊
+     * Base32 generate random b32 encoded string function
+     *
+     * @param {length}
+     * @type {int} 
+     * @desc the length of random b32 encoded string
+     *
+     * @return {String}
+     */
+    static random_gen(length=16) {
+        let random_str = Math.random().toString(36);
+            random_str = nibbler.b32encode(random_str);
+
+        return random_str.substring(0, length);
     }
 }

@@ -13,7 +13,8 @@ describe('Base32 module test', function() {
 
     describe('static random_gen() function', function() {
         it("should print 'static Base32.random_gen'", function() {
-            assert.equal("static Base32.random_gen", a.random_gen());
+            let length = 16;
+            assert(length, a.random_gen(length).length);
         })
     })
 });
