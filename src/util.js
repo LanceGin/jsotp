@@ -92,4 +92,27 @@ export class Util {
         return result;
     }
 
+    /*＊
+     * format the time string to int
+     *
+     * @param {time}
+     * @type {Date} 
+     * @desc the time need to be format
+     *
+     * @param {interval}
+     * @type {Int} 
+     * @desc interval means the one-time password's life,
+     * default to be 30.
+     *
+     * @return {Int}
+     */
+    static timecode(time, interval) {
+        let time_str = Date.parse(time).toString();
+
+        // fotmat the time, the ms is not needed.
+        let format_time = time_str.substring(0, time_str.length-3);
+
+        return parseInt(parseInt(format_time) / interval);
+    }
+
 }

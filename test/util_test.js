@@ -31,6 +31,13 @@ describe('Util module test', function() {
             let input = 49957590;
             assert.equal("\u0000\u0000\u0000\u0000\u0002úJÖ", a.int_to_bytestring(input));
         });
-    });    
+    });
+
+    describe('static timecode() function', function() {
+        it("should format the time string to int", function() {
+            let now = new Date();
+            assert.equal("number", typeof(a.timecode(now, 30)));
+        });
+    });  
 
 });
