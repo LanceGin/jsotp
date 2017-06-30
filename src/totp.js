@@ -4,6 +4,7 @@
  */
 
 import { OTP } from './otp';
+import { Util } from './util';
 
 export class TOTP extends OTP {
     /*＊
@@ -35,7 +36,12 @@ export class TOTP extends OTP {
      * ```
      */
     now() {
-        return "TOTP.now";
+        // get now time string
+        let now = Util.timecode(new Date(), this.interval);
+
+        // generate the one-time password
+        let digit = super.generate_otp(now);
+        return digit;
     }
 
     /*＊

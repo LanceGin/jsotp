@@ -4,11 +4,11 @@ var assert = require('assert');
 describe('TOTP module test', function() {
 
     var TOTP = totp.TOTP;
-    var a = new TOTP("BASE32_ENCODED_SECRET");
+    var a = new TOTP("J22U6B3WIWRRBTAV");
     
     describe('now() function', function() {
         it("should print 'TOTP.now'", function() {
-            assert.equal("TOTP.now", a.now());
+            assert.equal("string", typeof(a.now()));
         });
     });
 
