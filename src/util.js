@@ -44,8 +44,8 @@ export class Util {
      * @return {BYTES}
      */
     static arr_rjust(arr, n) {
-        if (0 <= arr.lenth) {
-            arr = arr.splice(arr.lenth - 1 - n);
+        if (n <= arr.length) {
+            arr = arr.splice(arr.length - 1 - n);
             return arr;
         } else {
             let diff = n - arr.length;
