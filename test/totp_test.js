@@ -14,7 +14,7 @@ describe('TOTP module test', function() {
 
     describe('verify() function', function() {
         it("should print 'TOTP.verify'", function() {
-            assert.equal("TOTP.verify", a.verify());
+            assert.equal(true, a.verify(a.now()));
         })
     })
 });
