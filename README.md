@@ -27,24 +27,6 @@ All modules support:
 let jsotp = require('jsotp');
 ```
 	
-Only `Base32` module support:
-
-```javascript
-let jsotp = require('jsotp/base32');
-```
-	
-Only `HOTP` module support:
-
-```javascript
-let jsotp = require('jsotp/hotp');
-```
-	
-Only `TOTP` module support: 
-
-```javascript
-let jsotp = require('jsotp/totp');
-```
-	
 ### Usage
 
 #### Time-based OTPs

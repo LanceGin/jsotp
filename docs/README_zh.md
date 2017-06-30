@@ -27,24 +27,6 @@ npm install jsotp
 let jsotp = require('jsotp');
 ```
 	
-仅 `Base32` 模块支持:
-
-```javascript
-let jsotp = require('jsotp/base32');
-```
-	
-仅 `HOTP` 模块支持:
-
-```javascript
-let jsotp = require('jsotp/hotp');
-```
-	
-仅 `TOTP` 模块支持: 
-
-```javascript
-let jsotp = require('jsotp/totp');
-```
-	
 ### 使用
 
 #### 基于时间的OTP
