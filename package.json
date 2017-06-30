@@ -2,7 +2,7 @@
   "name": "jsotp",
   "version": "1.0.0",
   "description": "Javascript One-Time Password module.",
-  "main": "main/jsotp.js",
+  "main": "lib/jsotp.js",
   "directories": {
     "doc": "docs",
     "test": "tests"
