@@ -93,19 +93,45 @@ let b32_secret = jsotp.Base32.random_gen();
 
 ### Api
 
-#### • jsotp.Base32.random_gen()
+#### • [jsotp.Base32.random_gen(length)](https://github.com/LanceGin/jsotp/blob/master/src/base32.js#L32)
 
-#### • jsotp.Util.url_gen
+	param: length
+	type: int
+	default: 16
+	return: String
+	desc: the length of random base32 encoded string.
 
-#### • jsotp.TOTP.now()
+#### • <del>jsotp.Util.url_gen()</del>
 
-#### • jsotp.TOTP.verify()
+#### • [jsotp.TOTP.now()](https://github.com/LanceGin/jsotp/blob/master/src/totp.js#L38)
+	
+	return: String
+	desc: get the one-time password with current time.
 
-#### • jsotp.HOTP.at()
+#### • [jsotp.TOTP.verify(totp)](https://github.com/LanceGin/jsotp/blob/master/src/totp.js#L70)
 
-#### • jsotp.HOTP.verify()
+	param: totp
+	type: string
+	return: Boolean
+	desc: verify the totp code.
 
-### Develop
+#### • [jsotp.HOTP.at(counter)](https://github.com/LanceGin/jsotp/blob/master/src/hotp.js#L24)
+
+	param: counter
+	type: int
+	return: String
+	desc: generate one-time password with counter.
+
+#### • [jsotp.HOTP.verify(hotp, count)](https://github.com/LanceGin/jsotp/blob/master/src/hotp.js#L50)
+	
+	param: hotp
+	type: string
+	param: count
+	type: int
+	return: Boolean
+	desc: verify the hotp code.
+
+### Contribute
 
 * Clone repo and install dependencies
 
