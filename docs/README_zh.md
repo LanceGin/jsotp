@@ -4,6 +4,10 @@
 
 该模块基于 [RFC4226](https://tools.ietf.org/html/rfc4226) （HOTP：基于计数器的一次性密码算法）和 [RFC6238](https://tools.ietf.org/html/rfc6238)（TOTP：基于时间的一次性密码算法）实现
 
+### 示例
+
+![](http://wx4.sinaimg.cn/large/89243dfbgy1fh3bz5e8bkj20rs0go460.jpg)
+
 ### 功能
 
 * 随机生成base32加密的字符串

@@ -4,6 +4,10 @@
 
 The module was implement based on [RFC4226](https://tools.ietf.org/html/rfc4226) (HOTP: An HMAC-Based One-Time Password Algorithm) and [RFC6238](https://tools.ietf.org/html/rfc6238) (TOTP: Time-Based One-Time Password Algorithm)
 
+### Example
+
+![](http://wx4.sinaimg.cn/large/89243dfbgy1fh3bz5e8bkj20rs0go460.jpg)
+
 ### Feature
 
 * Generate random base32 encoded string
