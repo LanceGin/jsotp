@@ -87,8 +87,13 @@ let b32_secret = jsotp.Base32.random_gen();
 	return: String
 	desc: the length of random base32 encoded string.
 
-#### • <del>jsotp.Util.url_gen()</del>
-
+#### • [jsotp.TOTP(secret)](https://github.com/LanceGin/jsotp/blob/master/src/jsotp.js#L48)
+	
+	param: secret
+	type: string
+	return: TOTP
+	desc: generate TOTP instance.
+	
 #### • [jsotp.TOTP.now()](https://github.com/LanceGin/jsotp/blob/master/src/totp.js#L38)
 	
 	return: String
@@ -100,7 +105,21 @@ let b32_secret = jsotp.Base32.random_gen();
 	type: string
 	return: Boolean
 	desc: verify the totp code.
+	
+#### • [jsotp.TOTP.url_gen(issuer)](https://github.com/LanceGin/jsotp/blob/master/src/totp.js#L94)
 
+	param: issuer
+	type: string
+	return: string
+	desc: generate url with TOTP instance
+
+#### • [jsotp.HOTP(secret)](https://github.com/LanceGin/jsotp/blob/master/src/jsotp.js#L47)
+	
+	param: secret
+	type: string
+	return: HOTP
+	desc: generate HOTP instance.
+	
 #### • [jsotp.HOTP.at(counter)](https://github.com/LanceGin/jsotp/blob/master/src/hotp.js#L24)
 
 	param: counter
@@ -116,6 +135,13 @@ let b32_secret = jsotp.Base32.random_gen();
 	type: int
 	return: Boolean
 	desc: verify the hotp code.
+
+#### • [jsotp.HOTP.url_gen(issuer)](https://github.com/LanceGin/jsotp/blob/master/src/hotp.js#L69)
+
+	param: issuer
+	type: string
+	return: string
+	desc: generate url with HOTP instance
 
 ### Contribute
 
