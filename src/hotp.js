@@ -56,4 +56,17 @@ export class HOTP extends OTP {
             return false;
         }
     }
+
+    /*＊
+     * Generate a url with HOTP instance.
+     *
+     * @param {issuer}
+     * @type {String} 
+     * @desc maybe it is the Service name
+     *
+     * @return {String}
+     */
+    url_gen(issuer="") {
+        return super.url_gen(issuer, "hotp");
+    }
 }

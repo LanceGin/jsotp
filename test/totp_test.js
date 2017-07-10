@@ -16,5 +16,11 @@ describe('TOTP module test', function() {
         it("should verify the digit", function() {
             assert.equal(true, a.verify(a.now()));
         })
+    });
+
+    describe('url_gen() function', function() {
+        it("should return string", function() {
+            assert.equal("string", typeof(a.url_gen()));
+        })
     })
 });

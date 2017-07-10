@@ -77,5 +77,21 @@ export class OTP  {
         return str_code;
     }
 
+    /*＊
+     * Generate a url with TOTP or HOTP instance.
+     *
+     * @param {issuer}
+     * @type {String} 
+     * @desc maybe it is the Service name
+     *
+     * @param {type}
+     * @type {String} 
+     * @desc type of OTP instance
+     *
+     * @return {String}
+     */
+    url_gen(issuer, type) {
+        return `otpauth://${type}/SK?secret=${this.secret}&issuer=${issuer}`;
+    }
  }
 

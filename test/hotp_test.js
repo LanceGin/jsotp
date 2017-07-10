@@ -17,5 +17,11 @@ describe('HOTP module test', function() {
             assert.equal(true, a.verify(a.at(0), 0));
             assert.equal(false, a.verify(a.at(0), 1));
         })
+    });
+
+    describe('url_gen() function', function() {
+        it("should return string", function() {
+            assert.equal("string", typeof(a.url_gen()));
+        })
     })
 });

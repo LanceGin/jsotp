@@ -81,4 +81,17 @@ export class TOTP extends OTP {
             return false;
         }
     }
+
+    /*＊
+     * Generate a url with TOTP instance.
+     *
+     * @param {issuer}
+     * @type {String} 
+     * @desc maybe it is the Service name
+     *
+     * @return {String}
+     */
+    url_gen(issuer="") {
+        return super.url_gen(issuer, "totp");
+    }
  }
