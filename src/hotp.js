@@ -6,11 +6,11 @@
 import { OTP } from './otp';
 
 export class HOTP extends OTP {
-    /*＊
+  /* ＊
      * Generate the OTP with the given count
      *
      * @param {count}
-     * @type {int} 
+     * @type {int}
      * @desc the OTP HMAC counter
      *
      * @return {OTP}
@@ -21,20 +21,20 @@ export class HOTP extends OTP {
      * hotp.at(0); // => 432143
      * ```
      */
-    at(count) {
-        let digit = super.generate_otp(count);
-        return digit;
-    }
+  at(count) {
+    const digit = super.generate_otp(count);
+    return digit;
+  }
 
-    /*＊
+  /* ＊
      * Verifies the OTP passed in against the current counter.
      *
      * @param {otp}
-     * @type {String} 
+     * @type {String}
      * @desc the OTP waiting for checking
      *
      * @param {counter}
-     * @type {int} 
+     * @type {int}
      * @desc the OTP HMAC counter
      *
      * @return {Boolean}
@@ -47,26 +47,25 @@ export class HOTP extends OTP {
      * hotp.verify(432143, 1); // => false
      * ```
      */
-    verify(otp, counter) {
-        let otp_count = this.at(counter);
+  verify(otp, counter) {
+    const otp_count = this.at(counter);
 
-        if (otp === otp_count) {
-            return true;
-        } else {
-            return false;
-        }
+    if (otp === otp_count) {
+      return true;
     }
+    return false;
+  }
 
-    /*＊
+  /* ＊
      * Generate a url with HOTP instance.
      *
      * @param {issuer}
-     * @type {String} 
+     * @type {String}
      * @desc maybe it is the Service name
      *
      * @return {String}
      */
-    url_gen(issuer="") {
-        return super.url_gen(issuer, "hotp");
-    }
+  url_gen(issuer = '') {
+    return super.url_gen(issuer, 'hotp');
+  }
 }

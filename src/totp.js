@@ -7,24 +7,24 @@ import { OTP } from './otp';
 import { Util } from './util';
 
 export class TOTP extends OTP {
-    /*＊
+  /* ＊
      * @param {secret}
-     * @type {String} 
+     * @type {String}
      * @desc random base32-encoded key to generate OTP.
      *
      * @param {interval}
-     * @type {int} 
+     * @type {int}
      * @desc the time interval in seconds for OTP.
      * This defaults to 30.
      *
      * @return {OTP}
      */
-    constructor(secret, interval=30) {
-        super(secret);
-        this.interval = interval;
-    }
+  constructor(secret, interval = 30) {
+    super(secret);
+    this.interval = interval;
+  }
 
-    /*＊
+  /* ＊
      * Generate the OTP with current time.
      *
      * @return {OTP}
@@ -35,24 +35,24 @@ export class TOTP extends OTP {
      * totp.now(); // => 432143
      * ```
      */
-    now() {
-        // get now time string
-        let now = Util.timecode(new Date(), this.interval);
+  now() {
+    // get now time string
+    const now = Util.timecode(new Date(), this.interval);
 
-        // generate the one-time password
-        let digit = super.generate_otp(now);
-        return digit;
-    }
+    // generate the one-time password
+    const digit = super.generate_otp(now);
+    return digit;
+  }
 
-    /*＊
+  /* ＊
      * Verifies the OTP passed in against the current time OTP.
      *
      * @param {otp}
-     * @type {String} 
+     * @type {String}
      * @desc the OTP waiting for checking
      *
      * @param {time}
-     * @type {int or datetime} 
+     * @type {int or datetime}
      * @desc Time to check OTP at (defaults to now)
      *
      * @return {Boolean}
@@ -67,31 +67,30 @@ export class TOTP extends OTP {
      * totp.verify(432143); // => false
      * ```
      */
-    verify(otp, time=null) {
-        let otp_time;
+  verify(otp, time = null) {
+    let otp_time;
 
-        if (null == time) {
-            time = new Date();
-            otp_time = this.now()
-        }
-
-        if (otp === otp_time) {
-            return true;
-        } else {
-            return false;
-        }
+    if (time == null) {
+      time = new Date();
+      otp_time = this.now();
     }
 
-    /*＊
+    if (otp === otp_time) {
+      return true;
+    }
+    return false;
+  }
+
+  /* ＊
      * Generate a url with TOTP instance.
      *
      * @param {issuer}
-     * @type {String} 
+     * @type {String}
      * @desc maybe it is the Service name
      *
      * @return {String}
      */
-    url_gen(issuer="") {
-        return super.url_gen(issuer, "totp");
-    }
- }
+  url_gen(issuer = '') {
+    return super.url_gen(issuer, 'totp');
+  }
+}
