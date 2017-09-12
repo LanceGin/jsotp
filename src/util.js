@@ -20,14 +20,15 @@ export class Util {
      * @return {String}
      */
   static rjust(num, n) {
-    let len = num.toString().length;
+    let numTmp = num;
+    let len = numTmp.toString().length;
 
     while (len < n) {
-      num = `0${num}`;
-      len++;
+      numTmp = `0${numTmp}`;
+      len += 1;
     }
 
-    return num;
+    return numTmp;
   }
 
   /* ＊
@@ -44,15 +45,16 @@ export class Util {
      * @return {BYTES}
      */
   static arr_rjust(arr, n) {
-    if (n <= arr.length) {
-      arr = arr.splice(arr.length - 1 - n);
-      return arr;
+    let arrTmp = arr;
+    if (n <= arrTmp.length) {
+      arrTmp = arrTmp.splice(arrTmp.length - 1 - n);
+      return arrTmp;
     }
-    const diff = n - arr.length;
-    for (let i = 0; i < diff; i++) {
-      arr.unshift(String.fromCharCode(0));
+    const diff = n - arrTmp.length;
+    for (let i = 0; i < diff; i += 1) {
+      arrTmp.unshift(String.fromCharCode(0));
     }
-    return arr;
+    return arrTmp;
   }
 
   /* ＊
@@ -78,11 +80,12 @@ export class Util {
      * @return {BYTES}
      */
   static int_to_bytestring(input, padding = 8) {
+    let inputTmp = input;
     let result = [];
 
-    while (input != 0) {
-      result.push(String.fromCharCode(input & 0xFF));
-      input >>= 8;
+    while (inputTmp !== 0) {
+      result.push(String.fromCharCode(inputTmp & 0xFF));
+      inputTmp >>= 8;
     }
 
     result = result.reverse();
@@ -106,11 +109,11 @@ export class Util {
      * @return {Int}
      */
   static timecode(time, interval) {
-    const time_str = Date.parse(time).toString();
+    const timeStr = Date.parse(time).toString();
 
     // fotmat the time, the ms is not needed.
-    const format_time = time_str.substring(0, time_str.length - 3);
+    const formatTime = timeStr.substring(0, timeStr.length - 3);
 
-    return parseInt(parseInt(format_time) / interval);
+    return parseInt(parseInt(formatTime) / interval);
   }
 }

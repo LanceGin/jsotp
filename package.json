@@ -9,7 +9,8 @@
   },
   "scripts": {
     "test": "mocha --compilers js:babel-core/register",
-    "build": "babel src -d lib"
+    "build": "babel src -d lib",
+    "lint": "eslint src/**.js ; exit 0"
   },
   "repository": {
     "type": "git",
