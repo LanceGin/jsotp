@@ -72,8 +72,8 @@ export class TOTP extends OTP {
 
     if (time == null) {
       time = new Date();
-      otp_time = this.now();
     }
+    otp_time = super.generate_otp(Util.timecode(time, this.interval));
 
     if (otp === otp_time) {
       return true;
