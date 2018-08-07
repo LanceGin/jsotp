@@ -28,7 +28,7 @@ npm install jsotp
 All modules support:
 
 ```javascript
-let jsotp = require('jsotp');
+const jsotp = require('jsotp');
 ```
 	
 ### Usage
@@ -37,10 +37,10 @@ let jsotp = require('jsotp');
 
 ```javascript
 // import
-let jsotp = require('jsotp');
+const jsotp = require('jsotp');
 
 // Create TOTP object
-let totp = jsotp.TOTP('BASE32ENCODEDSECRET');
+const totp = jsotp.TOTP('BASE32ENCODEDSECRET');
 totp.now(); // => 432143
 
 // Verify for current time
@@ -54,10 +54,10 @@ totp.verify(432143); // => false
 
 ```javascript
 // import
-let jsotp = require('jsotp');
+const jsotp = require('jsotp');
 
 // Create HOTP object
-let hotp = jsotp.HOTP('BASE32ENCODEDSECRET');
+const hotp = jsotp.HOTP('BASE32ENCODEDSECRET');
 hotp.at(0); // => 432143
 hotp.at(1); // => 231434
 hotp.at(2132); // => 242432
@@ -71,10 +71,10 @@ hotp.verify(242432, 2133); // => false
 
 ```javascript
 // import
-let jsotp = require('jsotp');
+const jsotp = require('jsotp');
 
 // Generate
-let b32_secret = jsotp.Base32.random_gen();
+const b32_secret = jsotp.Base32.random_gen();
 ```
 
 ### Api
