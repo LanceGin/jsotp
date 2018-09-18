@@ -19,9 +19,12 @@ export class TOTP extends OTP {
      *
      * @return {OTP}
      */
-  constructor(secret, interval = 30) {
+  constructor(secret, interval = 30,digits,digest) {
     super(secret);
     this.interval = interval;
+    console.log('they are',digest,digits,interval)
+    this.digits = digits;
+    this.digest = digest;
   }
 
   /* ＊
@@ -37,7 +40,7 @@ export class TOTP extends OTP {
      */
   now() {
     // get now time string
-    const now = Util.timecode(new Date(), this.interval);
+    const now = Util.timecode(new Date(), this.interval,this.digits,this.digest);
 
     // generate the one-time password
     const digit = super.generate_otp(now);

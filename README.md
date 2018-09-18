@@ -16,6 +16,7 @@ The module was implement based on [RFC4226](https://tools.ietf.org/html/rfc4226)
 * Verify a HOTP token
 * Create a TOTP object with verification
 * Verify a TOTP token
+* Added support for custom interval,algorithm,digits for TOTP generation.
 
 ### Installation
 
