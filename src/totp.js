@@ -19,8 +19,10 @@ export class TOTP extends OTP {
      *
      * @return {OTP}
      */
-  constructor(secret, interval = 30) {
+  constructor(secret, interval = 30, digits = 6, digest = 'SHA-1') {
     super(secret);
+    super(digits);
+    super(digest);
     this.interval = interval;
   }
 
