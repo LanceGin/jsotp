@@ -38,8 +38,8 @@ function hotp_gen(secret, digits = 6, digest = 'SHA-1') {
  *
  * @return {OTP}
  */
-function totp_gen(secret, interval = 30) {
-  const totp = new TOTP(secret, interval);
+function totp_gen(secret, interval = 30,digits=6,digest="SHA-1") {
+  const totp = new TOTP(secret, interval,digits,digest);
   return totp;
 }
 
@@ -48,4 +48,4 @@ export {
   totp_gen as TOTP,
   Base32,
   Util,
-};
+}
