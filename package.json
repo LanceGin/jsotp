@@ -40,6 +40,7 @@
     "mocha": "^3.4.2"
   },
   "dependencies": {
+    "babel": "^6.23.0",
     "jssha": "^2.3.1"
   }
 }
