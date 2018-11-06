@@ -14,7 +14,7 @@ describe('HOTP module test', function() {
 
     describe('verify() function', function() {
         it("should verify the digit", function() {
-            assert.equal(true, a.verify(a.at(0), 0));
+            assert.equal(true, a.verify(parseInt(a.at(0)), 0));
             assert.equal(false, a.verify(a.at(0), 1));
         })
     });

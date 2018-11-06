@@ -14,7 +14,7 @@ describe('TOTP module test', function() {
 
     describe('verify() function', function() {
         it("should verify the digit", function() {
-            assert.equal(true, a.verify(a.now()));
+            assert.equal(true, a.verify(parseInt(a.now())));
         })
     });
 
