@@ -50,6 +50,10 @@ export class HOTP extends OTP {
   verify(otp, counter) {
     const otp_count = this.at(counter);
 
+    if (typeof(otp) === 'number') {
+      otp = otp.toString();
+    }
+
     if (otp === otp_count) {
       return true;
     }
