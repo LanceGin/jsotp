@@ -43,6 +43,11 @@ export class TOTP extends OTP {
     const digit = super.generate_otp(now);
     return digit;
   }
+  prev() {
+    return this.generate_otp(
+      (Date.now() / 1000 - this.interval | 0) / this.interval
+    )
+  }
 
   /* ＊
      * Verifies the OTP passed in against the current time OTP.
