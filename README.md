@@ -22,7 +22,7 @@ The module was implement based on [RFC4226](https://tools.ietf.org/html/rfc4226)
 ```shell
 npm install jsotp
 ```
-	
+
 ### Module
 
 All modules support:
@@ -30,7 +30,7 @@ All modules support:
 ```javascript
 const jsotp = require('jsotp');
 ```
-	
+
 ### Usage
 
 #### Time-based OTPs
@@ -42,6 +42,7 @@ const jsotp = require('jsotp');
 // Create TOTP object
 const totp = jsotp.TOTP('BASE32ENCODEDSECRET');
 totp.now(); // => 432143
+totp.prev(); // => 666666
 
 // Verify for current time
 totp.verify(432143); // => true
@@ -81,67 +82,72 @@ const b32_secret = jsotp.Base32.random_gen();
 
 #### • [jsotp.Base32.random_gen(length)](https://github.com/LanceGin/jsotp/blob/master/src/base32.js#L32)
 
-	param: length
-	type: int
-	default: 16
-	return: String
-	desc: the length of random base32 encoded string.
+param: length
+type: int
+default: 16
+return: String
+desc: the length of random base32 encoded string.
 
 #### • [jsotp.TOTP(secret)](https://github.com/LanceGin/jsotp/blob/master/src/jsotp.js#L48)
-	
-	param: secret
-	type: string
-	return: TOTP
-	desc: generate TOTP instance.
-	
+
+param: secret
+type: string
+return: TOTP
+desc: generate TOTP instance.
+
 #### • [jsotp.TOTP.now()](https://github.com/LanceGin/jsotp/blob/master/src/totp.js#L38)
-	
-	return: String
-	desc: get the one-time password with current time.
+
+return: String
+desc: get the one-time password with previous time.
+
+#### • [jsotp.TOTP.prev()](https://github.com/LanceGin/jsotp/blob/master/src/totp.js#L46)
+
+return: String
+desc: get the one-time password with current time.
 
 #### • [jsotp.TOTP.verify(totp)](https://github.com/LanceGin/jsotp/blob/master/src/totp.js#L70)
 
-	param: totp
-	type: string
-	return: Boolean
-	desc: verify the totp code.
-	
+param: totp
+type: string
+return: Boolean
+desc: verify the totp code.
+
 #### • [jsotp.TOTP.url_gen(issuer)](https://github.com/LanceGin/jsotp/blob/master/src/totp.js#L94)
 
-	param: issuer
-	type: string
-	return: string
-	desc: generate url with TOTP instance
+param: issuer
+type: string
+return: string
+desc: generate url with TOTP instance
 
 #### • [jsotp.HOTP(secret)](https://github.com/LanceGin/jsotp/blob/master/src/jsotp.js#L47)
-	
-	param: secret
-	type: string
-	return: HOTP
-	desc: generate HOTP instance.
-	
+
+param: secret
+type: string
+return: HOTP
+desc: generate HOTP instance.
+
 #### • [jsotp.HOTP.at(counter)](https://github.com/LanceGin/jsotp/blob/master/src/hotp.js#L24)
 
-	param: counter
-	type: int
-	return: String
-	desc: generate one-time password with counter.
+param: counter
+type: int
+return: String
+desc: generate one-time password with counter.
 
 #### • [jsotp.HOTP.verify(hotp, count)](https://github.com/LanceGin/jsotp/blob/master/src/hotp.js#L50)
-	
-	param: hotp
-	type: string
-	param: count
-	type: int
-	return: Boolean
-	desc: verify the hotp code.
+
+param: hotp
+type: string
+param: count
+type: int
+return: Boolean
+desc: verify the hotp code.
 
 #### • [jsotp.HOTP.url_gen(issuer)](https://github.com/LanceGin/jsotp/blob/master/src/hotp.js#L69)
 
-	param: issuer
-	type: string
-	return: string
-	desc: generate url with HOTP instance
+param: issuer
+type: string
+return: string
+desc: generate url with HOTP instance
 
 ### Contribute
 
