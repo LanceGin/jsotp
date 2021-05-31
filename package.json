@@ -1,6 +1,6 @@
 {
-  "name": "jsotp",
-  "version": "1.0.3",
+  "name": "@taichi-yi/jsotp",
+  "version": "1.1.1",
   "description": "Javascript One-Time Password module.",
   "main": "lib/jsotp.js",
   "directories": {
@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/LanceGin/jsotp.git"
+    "url": "git+https://github.com/taichiyi/jsotp.git"
   },
   "keywords": [
     "otp",
@@ -26,9 +26,9 @@
   "author": "lancegin",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/LanceGin/jsotp/issues"
+    "url": "https://github.com/taichiyi/jsotp/issues"
   },
-  "homepage": "https://github.com/LanceGin/jsotp#readme",
+  "homepage": "https://github.com/taichiyi/jsotp#readme",
   "devDependencies": {
     "babel-cli": "^6.24.1",
     "babel-core": "^6.25.0",
